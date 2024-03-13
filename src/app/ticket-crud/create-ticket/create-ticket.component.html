@@ -1,0 +1,64 @@
+
+<div class="container" style=" min-height: 620px;">
+  <form [formGroup]="createticketform" (ngSubmit)="createTicket()">
+      <div class="row align-items-start">
+          <div class="col"></div>
+
+          <div class="container contenidocuerpo">
+
+              <h2>Create new Ticket</h2>
+
+              <label for="title">Title:</label>
+              <input type="text" class="form-control" formControlName="title" required/>
+
+              <label for="description">Description:</label>
+              <input type="text" class="form-control" formControlName="description" required/>
+
+              <label for="updated_at" class="mt-2">Updated at:</label>
+              <input type="date" class="form-control" formControlName="updated_at" required >
+
+              <label for="created_at" class="mt-2">Created at:</label>
+              <input type="date" class="form-control" formControlName="created_at" required />
+
+              <label for="user">User ID:</label>
+              <input type="text" class="form-control" formControlName="users" required/>
+
+              <label class="label-control mb-1" for="kinds">Kinds</label>
+              <select class="form-select" formControlName="kinds" required >
+                <option value="">Choose an option</option>
+                <option  value="{{item.id}}" *ngFor=" let item of kinds">{{item.name}} </option>
+              </select>
+
+              <label class="label-control mb-1" for="projects">Projects</label>
+              <select  class="form-select" formControlName="projects" required>
+                <option value="">Choose an option</option>
+                <option  value="{{item.id}}" *ngFor=" let item of projects">{{item.name}} </option>
+              </select>
+
+              <label class="label-control mb-1" for="categories">Categories</label>
+              <select  class="form-select" formControlName="categories" required >
+                <option value="">Choose an option</option>
+                <option  value="{{item.id}}" *ngFor=" let item of categories">{{item.name}} </option>
+              </select>
+
+              <label class="label-control mb-1" for="priorities">Ppriorities</label>
+              <select  class="form-select" formControlName="priorities" required >
+                <option value="">Choose an option</option>
+                <option  value="{{item.id}}" *ngFor=" let item of priorities">{{item.name}} </option>
+              </select>
+
+              <label class="label-control mb-1" for="status">Status</label>
+              <select  class="form-select" formControlName="status" required >
+                <option value="">Choose an option</option>
+                <option  value="{{item.id}}" *ngFor=" let item of status">{{item.name}} </option>
+              </select>
+
+              <br>
+              <button type="submit">Create</button>
+
+            </div>
+          <div class="col"></div>
+      </div>
+
+  </form>
+</div>

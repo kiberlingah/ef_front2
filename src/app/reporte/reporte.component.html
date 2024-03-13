@@ -1,0 +1,47 @@
+
+<div class="container contentspace" >
+  <h3 class="text-center mt-4 mb-4"> Report User by Category</h3>
+  <form [formGroup]="repoform" (submit)="ReportUserCategory()">
+      <div class="row align-items-start">
+          <div class="col-3"></div>
+
+          <div class="row align-items-center">
+      <div class="col">
+        <label class="label-control" for="I">Search user by Category:</label>
+      </div>
+      <div class="col">
+        <select  class="form-select" formControlName="categoryName" required >
+          <option value="">Choose an option</option>
+          <option  value="{{item.name}}" *ngFor=" let item of categories">{{item.name}} </option>
+        </select>
+      </div>
+      <div class="col">
+                  <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i> Buscar</button>
+              </div>
+    </div>
+
+      </div>
+  </form>
+
+  <table class="table mt-4">
+      <thead>
+          <tr>
+              <th>User ID</th>
+              <th>Name</th>
+              <th>Lastname</th>
+              <th>Category Id</th>
+              <th>Category Name</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let report of reportuserbycategory">
+              <td>{{ report.userId }}</td>
+              <td>{{ report.name }}</td>
+              <td>{{ report.lastname }}</td>
+              <td>{{ report.categoryId }}</td>
+              <td>{{ report.categoryName }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+

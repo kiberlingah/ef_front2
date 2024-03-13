@@ -1,0 +1,26 @@
+h2 {
+  text-align: center;
+}
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #6e9064;
+  border-radius: 5px;
+  background-color: white;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #6e9064;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+  background-color: #5e8353;
+  color: #fff;
+}

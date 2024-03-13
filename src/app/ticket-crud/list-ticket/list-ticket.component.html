@@ -1,0 +1,53 @@
+
+<div class="submit-form container" >
+  <div *ngIf="!submitted">
+    <h3 class="text-center mt-4 mb-4"> List of Tickets</h3>
+
+    <div class="col-2">
+      <a class="btn btn-dark" routerLink="/createticket" >New Ticket</a>
+    </div>
+</div>
+    <div class="col-md-12 p-2">
+      <table class="table border-success table-hover">
+
+      <thead >
+            <tr class="table-success ">
+                <th >Id</th>
+                <th >Title</th>
+                <th >Description</th>
+                <th >Update_at</th>
+                <th >Create_at</th>
+                <th >Kind</th>
+                <th >User</th>
+                <th >Project</th>
+                <th >Category</th>
+                <th >Priority</th>
+                <th >Status</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listticket">
+              <td>{{item.id}}</td>
+              <td>{{item.title}}</td>
+              <td>{{item.description}}</td>
+              <td>{{item.updated_at}}</td>
+              <td>{{item.created_at}}</td>
+              <td>{{item.kinds?.name}}</td>
+              <td>{{item.users?.name}}</td>
+              <td>{{item.projects?.name}}</td>
+              <td>{{item.categories?.name}}</td>
+              <td>{{item.priorities?.name}}</td>
+              <td>{{item.status?.name}}</td>
+              <td>
+                  <button type="button" class="btn btn-warning" routerLink="/updateticket/{{item.id}}">Edit
+                  </button>
+                  &nbsp;
+                  <button type="button" class="btn btn-danger" (click)="delete(item)">Delete</button>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

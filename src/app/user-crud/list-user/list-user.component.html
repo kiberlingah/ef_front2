@@ -1,0 +1,46 @@
+<div class="submit-form container" >
+  <div *ngIf="!submitted">
+    <h3 class="text-center mt-4 mb-4"> List of Users</h3>
+
+    <div class="col-2">
+      <a class="btn btn-dark" routerLink="/createuser" >New User</a>
+    </div>
+</div>
+    <div class="col-md-12 p-2">
+      <table class="table border-success table-hover">
+
+      <thead >
+            <tr class="table-success " >
+                <th >Id</th>
+                <th >Username</th>
+                <th >Name</th>
+                <th >Lastname</th>
+                <th >Email</th>
+                <th >Is_Active</th>
+                <th >Kind</th>
+                <th >Creadted_At</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listuser">
+              <td>{{item.id}}</td>
+              <td>{{item.username}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.lastname}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.is_active}}</td>
+              <td>{{item.kind}}</td>
+              <td>{{item.created_at}}</td>
+              <td>
+                  <a class="btn btn-warning" routerLink="/updateuser/{{item.id}}">Edit
+                  </a>
+                  &nbsp;
+                  <button type="button" class="btn btn-danger" (click)="delete(item)" >Delete</button>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

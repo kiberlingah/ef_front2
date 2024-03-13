@@ -1,0 +1,40 @@
+h2 {
+  text-align: center;
+}
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #d3578d;
+  border-radius: 5px;
+  background-color: white;
+}
+label {
+  font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #d3578d;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+  background-color: #bb4679;
+  color: #fff;
+}
